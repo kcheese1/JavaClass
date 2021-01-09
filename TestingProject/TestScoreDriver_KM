@@ -1,0 +1,32 @@
+/**
+ * The Driver for the testScore class.
+ * @author Kolby Miller
+ */
+import java.util.Scanner;
+public class TestScoreDriver_KM {
+
+	public static void main(String[] args) throws IllegalArgumentException{
+
+		Scanner kb = new Scanner(System.in);
+		System.out.print("How many scores do you wish to enter? "); //asks how many scores the user would like to enter.
+		
+		int length = kb.nextInt(); //user enters
+
+		double[] scores = new double[length]; 
+			
+		double score = 0;
+		
+		for (int i = 0; i < length; i++) //User enters the scores
+		{
+			System.out.printf("Enter #%d: ", (i+1));
+			score = kb.nextDouble();
+			scores[i] = score;
+		}
+		
+		TestScores_KM temp = new TestScores_KM(scores); //prints scores
+
+		System.out.println();
+		
+		System.out.println(temp.genAverage()); //prints average
+}
+}
